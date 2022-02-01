@@ -9,6 +9,16 @@
 h2{
     margin: 1rem auto;
 }
+h3 {
+    font-size: 1rem;
+    /* font-weight: 500; */
+}
+a,
+a:active,
+a:visited{
+    text-decoration: none;
+    color: blue;
+}
 p {
     padding: .5rem 0;
 }
