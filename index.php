@@ -34,21 +34,22 @@ $db = [
         'answer' => [
             "Il tuo account è associato a un paese &lpar;o territorio&rpar; nei Termini di servizio per poter stabilire due cose&colon;",
             [
-                #0
+                #1.
                 [
                     'title' => 'La società consociata Google che offre i servizi&comma; tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti&period; Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti&colon;',
-                    'sub-list' => [
+                    'subList' => [
+                        #a.
                         "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo &lpar;paesi dell'Unione europea&comma; oltre a Islanda&comma; Liechtenstein e Norvegia&rpar; o in Svizzera&period;",
+                        #b.
                         'Google LLC, con sede negli Stati Uniti&comma; per il resto del mondo&period;'
                     ],
                 ],
-                #1
+                #2.
                 [
                     'title' => 'La versione dei termini che regola il nostro rapporto&comma; che può variare in base alle leggi locali&period;'
                 ],
             ],
-            "Puoi leggere ulteriori informazioni sulla sicurezza online&comma; incluso come proteggere te e la tua famiglia online&comma; nel Centro Google per la sicurezza online&period;",
-            "Scopri quali misure adottiamo per garantire protezione e sicurezza alle tue informazioni personali&comma; lasciando a te il controllo&period;"
+            "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account&period;"
         ]
     ],
     //QUESTION #4
@@ -86,6 +87,19 @@ $db = [
     /**
      * to-do: 
      * header e footer
+     * 
+     * 
+     * inserire in database sub-paragraph e stampare in html
+     * ==========================================
+     subtitle: Stabilire il paese associato al tuo account
+     
+     subparagraphs
+     Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.
+     
+     I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.
+     
+     Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato.
+     * ==========================================
      */
     ?>
     <!-- HEADER -->
@@ -117,15 +131,25 @@ $db = [
                     ?>
                                 <ol class="list-num-index">
                                     <?php
-                                    foreach ($parList as $titleList => $item) {
+                                    foreach ($parList as $item) {
                                     ?>
                                         <li>
-                                            <h3><?=$item['title']?></h3>
-                                            <ol class="list-str-index">
-                                                <li>
-                                                    test sub-menu
-                                                </li>
-                                            </ol>
+                                            <p><?=$item['title']?></p>
+                                            <?php
+                                            if(isset($item['subList'])) {
+                                            ?>
+                                                <ol class="list-str-index">
+                                                    <?php
+                                                    foreach ($item['subList'] as $subParag) {
+                                                    ?>
+                                                        <li><?=$subParag?></li>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </ol>
+                                            <?php
+                                            }
+                                            ?>
                                         </li>
                                     <?php
                                     }

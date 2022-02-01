@@ -1,10 +1,16 @@
 * {
-    margin: .75rem auto;
-    padding: 0.25rem;
+    margin: 0 auto;
+    padding: 0rem;
     box-sizing: border-box;
 }
 .container {
     max-width: 850px;
+}
+h2{
+    margin: 1rem auto;
+}
+p {
+    padding: .5rem 0;
 }
 /*allineamento marker a container*/
 ol {
