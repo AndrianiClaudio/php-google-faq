@@ -61,11 +61,13 @@ $db = [
                     <ol class='list-str-index'>
                         <li>
                             <p>
-                            </p>
                             Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.
+                            </p>
                         </li>
                         <li>
-                            Google LLC, con sede negli Stati Uniti, per il resto del mondo.
+                            <p>
+                                Google LLC, con sede negli Stati Uniti, per il resto del mondo.
+                            </p>
                         </li>
                     </ol>
                 </li>
@@ -98,14 +100,18 @@ $db = [
         'question' => 
             "Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?",
         'answer' => 
-            "I risultati di ricerca di Google rispecchiano i contenuti pubblicamente disponibili sul Web&period; I motori di ricerca non possono rimuovere i contenuti direttamente dai siti web&comma; quindi rimuovere risultati di ricerca da Google non consente di rimuovere i contenuti dal Web&period; Se desideri rimuovere qualcosa dal Web&comma; devi <a href='#'>contattare il webmaster</a> del sito su cui sono pubblicati i contenuti e chiedergli di apportare una modifica&period; Inoltre&comma; se&comma; ai sensi delle leggi europee per la protezione dei dati&comma; desideri richiedere la rimozione di determinate informazioni su di te visualizzate nei risultati di ricerca di Google&comma; <a href='#'>fai clic qui&period;</a> Una volta che i contenuti saranno stati rimossi e che Google avrà rilevato l'aggiornamento&comma; le informazioni non verranno più visualizzate nei risultati di ricerca di Google&period; In caso di una richiesta di rimozione urgente&comma; è inoltre possibile <a href='#'>visitare la nostra pagina di assistenza per avere ulteriori informazioni&period;</a>"
+            "<p>
+                I risultati di ricerca di Google rispecchiano i contenuti pubblicamente disponibili sul Web&period; I motori di ricerca non possono rimuovere i contenuti direttamente dai siti web&comma; quindi rimuovere risultati di ricerca da Google non consente di rimuovere i contenuti dal Web&period; Se desideri rimuovere qualcosa dal Web&comma; devi <a href='#'>contattare il webmaster</a> del sito su cui sono pubblicati i contenuti e chiedergli di apportare una modifica&period; Inoltre&comma; se&comma; ai sensi delle leggi europee per la protezione dei dati&comma; desideri richiedere la rimozione di determinate informazioni su di te visualizzate nei risultati di ricerca di Google&comma; <a href='#'>fai clic qui&period;</a> Una volta che i contenuti saranno stati rimossi e che Google avrà rilevato l'aggiornamento&comma; le informazioni non verranno più visualizzate nei risultati di ricerca di Google&period; In caso di una richiesta di rimozione urgente&comma; è inoltre possibile <a href='#'>visitare la nostra pagina di assistenza per avere ulteriori informazioni&period;</a>
+            </p>"
     ],
     //QUESTION #5
     [
         'question' => 
             "Quando faccio clic sui risultati della Ricerca Google, le mie chiavi di ricerca vengono inviate ai siti web?",
         'answer' => 
-            "In alcuni casi sì&period; Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet&comma; o URL&comma; della pagina dei risultati di ricerca sotto forma di <a href='#'>URL referrer&period;</a> Talvolta&comma; l'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito&period; Se utilizzi la ricerca SSL &lpar;la funzione di ricerca criptata di Google&rpar;&comma; nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell'URL negli URL referrer&period; Questo comportamento può fare eccezione&comma; ad esempio se utilizzi alcuni browser meno diffusi&period; Ulteriori informazioni sulla ricerca SSL sono disponibili <a href='#'>qui&period;</a> Le query di ricerca o le informazioni contenute nell'URL referrer potrebbero essere disponibili mediante Google Analytics o un'API &lpar;Application Programming Interface)&period; Inoltre&comma; gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio&period;"
+            "<p>
+                In alcuni casi sì&period; Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet&comma; o URL&comma; della pagina dei risultati di ricerca sotto forma di <a href='#'>URL referrer&period;</a> Talvolta&comma; l'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito&period; Se utilizzi la ricerca SSL &lpar;la funzione di ricerca criptata di Google&rpar;&comma; nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell'URL negli URL referrer&period; Questo comportamento può fare eccezione&comma; ad esempio se utilizzi alcuni browser meno diffusi&period; Ulteriori informazioni sulla ricerca SSL sono disponibili <a href='#'>qui&period;</a> Le query di ricerca o le informazioni contenute nell'URL referrer potrebbero essere disponibili mediante Google Analytics o un'API &lpar;Application Programming Interface)&period; Inoltre&comma; gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio&period;
+            </p>"
     ],
 ];
 // var_dump($db);
@@ -118,6 +124,12 @@ $db = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domande frequenti - Privacy e termini - Boolean</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- link mine css -->
     <link rel="stylesheet" href="./style/style.css">
 </head>
@@ -126,11 +138,15 @@ $db = [
     <header class="header">
         <div class="header-top">
             <div class="logo-container">
-                <img src="./img/google_logo.svg" alt="Google logo">
-                <a href="#" class="underline">Privacy e termini</a>
+                <img src="./img/google_logo.svg" class='logo' alt="Google logo">
+                <a href="#" class="privacy-link">Privacy e termini</a>
             </div>
             <div class="btn-container">
-                ICON
+                <div class="collapse-icon">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
                 <button>Accedi</button>
             </div>
         </div>
