@@ -1,6 +1,7 @@
 :root {
     --header-height: 110px;
     --header-top-height: 78px;
+    --footer-height: 50px;
 }
 
 * {
@@ -11,6 +12,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
+    min-width: 1000px;
 }
 /* GENERAL */
 h2, h3 {
@@ -32,6 +34,7 @@ a:visited{
     color:  #5f6368;
 }
 p {
+    font-size: 0.95rem;
     font-weight: 400;
     padding: .75rem 0;
 }
@@ -67,7 +70,10 @@ header.header {
 }
 .header-top,
 .header-top .logo-container,
-.header-top .btn-container {
+.header-top .btn-container,
+footer.footer .container,
+footer.footer .language-container
+ {
     display: flex;
     align-items: center;
 }
@@ -130,12 +136,54 @@ header.header {
 .header-bottom a,
 .header-bottom a:active,
 .header-bottom a:visited {
-    /* color: #5f6368; */
+    color: #5f6368;
 }
 
 /* MAIN */
-.main .container {
+
+main.main .container,
+footer.footer .container {
     margin: 5rem auto;
-    max-width: 1000px;
+    max-width: 950px;
     line-height: 1.5rem;
+}
+
+/* FOOTER */
+footer.footer {
+    height: var(--footer-height);
+    background-color: #f5f5f5;;
+    color: #5f6368;
+}
+footer.footer .container {
+    margin: 0 auto;
+    height: 100%;
+    justify-content: space-between;
+}
+footer.footer .container ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+footer.footer .container ul li::marker {
+    line-height: 100%;
+}
+footer.footer .container ul li:not(:first-child) {
+    list-style: disc;
+    font-size:0.4rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
+footer.footer .container ul li a {
+    font-size: 0.8rem;
+}
+.footer .language-container {
+    height: 100%;
+    gap: 0.35rem;
+    font-size: 1rem;
+}
+.footer .language-container img {
+    margin-top:5px;
+}
+.footer #select-language {
+    width: 8rem;
 }

@@ -183,7 +183,28 @@ $db = [
     <!-- MAIN -->
     <!-- /FOOTER -->
     <footer class="footer">
-
+        <div class="container">
+            <ul>
+                <li>
+                    <a href="#">Google</a>
+                </li>
+                <li>
+                    <a href="#">Tutto su Google</a>
+                </li>
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Termini</a>
+                </li>
+            </ul>
+            <div class="language-container">
+                <img src="./img/language_world.png" alt="world">
+                <select name="select-language" id="select-language">
+                    <option value="Italiano">Italiano</option>
+                </select>
+            </div>
+        </div>
     </footer>
     <!-- /FOOTER -->
 
