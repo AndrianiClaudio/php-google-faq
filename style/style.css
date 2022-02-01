@@ -3,9 +3,8 @@
     padding: 0rem;
     box-sizing: border-box;
 }
-.container {
-    max-width: 850px;
-}
+
+/* GENERAL */
 h2{
     margin: 1rem auto;
 }
@@ -23,6 +22,9 @@ p {
     padding: .5rem 0;
 }
 /*allineamento marker a container*/
+ul {
+    list-style: none;
+}
 ol {
     margin-left: 1rem;
 }
@@ -31,4 +33,27 @@ ol.list-num-index {
 }
 ol.list-str-index {
     list-style: lower-alpha;
+}
+
+/* HEADER */
+header.header {
+    position: sticky;
+    height: 130px;
+    /* background-color: red; */
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+}
+.header-bottom > ul {
+    display: flex;
+    gap: .5rem;
+}
+.header-bottom > ul > li.active {
+    color: blue;
+}
+
+/* MAIN */
+.main > .container {
+    max-width: 850px;
 }

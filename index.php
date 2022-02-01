@@ -101,7 +101,27 @@ $db = [
      */
     ?>
     <!-- HEADER -->
-    <header class="header"></header>
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-container">
+                <img src="./img/google_logo.svg" alt="Google logo">
+                <a href="#" class="underline">Privacy e termini</a>
+            </div>
+            <div class="btn-container">
+                ICON
+                <button>Accedi</button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <ul>
+                <li><a href='#'>Introduzione</a></li>
+                <li><a href='#'>Norme sulla privacy</a></li>
+                <li><a href='#'>Termini di servizio</a></li>
+                <li><a href='#'>Tecnologie</a></li>
+                <li class="active"><a href='#'>Domande frequenti</a></li>
+            </ul>
+        </div>
+    </header>
     <!-- /HEADER -->
     <!-- MAIN -->
     <main class="main">
@@ -176,7 +196,9 @@ $db = [
     </main>
     <!-- MAIN -->
     <!-- /FOOTER -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+
+    </footer>
     <!-- /FOOTER -->
 
 </body>
