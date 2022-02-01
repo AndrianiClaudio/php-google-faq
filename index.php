@@ -7,6 +7,12 @@ $db = [
     /**
      * to-do: riempire con tutte le domande e le risposte
      * cambiare caratteri speciali con codice html
+     * 
+     * gestire risposta con lista ordinata 
+     *      se answer[indice] stringa => stampa <p>
+     *           //           array => stampa <ol>
+     * dovrebbe essere possibile gestirlo senza problemi dopo
+     * 
      * &apos; = '
      * &period; = .
      * &quest; = ?
@@ -36,5 +42,53 @@ $db = [
         ]
     ]
 ];
-var_dump($db);
+// var_dump($db);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domande frequenti - Privacy e termini - Boolean</title>
+</head>
+<body>
+    <?php
+    /**
+     * to-do: 
+     * header e footer
+     */
+    ?>
+    <!-- HEADER -->
+    <header class="header"></header>
+    <!-- /HEADER -->
+    <!-- MAIN -->
+    <main class="main">
+        <div class="container">
+            <!-- devo scorrere tutto il database e per ogni domanda stampare la/le risposta/e -->
+            <?php 
+            foreach ($db as $faq) {
+                //chiavi di db -> integer 0 -> max
+                // var_dump($faq);
+                foreach ($faq as $ansQue => $value) {
+                    //chiave di faq=$ansQue -> question/answer
+                    if ($ansQue === 'question') {
+                    ?>
+                        <h2><?=$value?></h2>
+                    <?php
+                    }
+                }
+            }
+            ?>
+            <!-- DOMANDA -->
+            <!-- RISPOSTA/RISPOSTE -->
+        </div>
+    </main>
+    <!-- MAIN -->
+    <!-- /FOOTER -->
+    <footer class="footer"></footer>
+    <!-- /FOOTER -->
+
+</body>
+</html>
