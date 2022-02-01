@@ -1,0 +1,9 @@
+* {
+    margin: .75rem auto;
+    padding: 0.25rem;
+    box-sizing: border-box;
+}
+.container {
+    width: 50%;
+    min-width: 850px;
+}
