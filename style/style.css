@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 .container {
-    width: 50%;
-    min-width: 850px;
+    max-width: 850px;
+}
+/*allineamento marker a container*/
+ol {
+    margin-left: 1rem;
+}
+ol.list-num-index {
+    list-style: decimal;
+}
+ol.list-str-index {
+    list-style: lower-alpha;
 }

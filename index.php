@@ -36,15 +36,15 @@ $db = [
             [
                 #0
                 [
-                    'La società consociata Google che offre i servizi&comma; tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti&period; Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti&colon;',
-                    [
+                    'title' => 'La società consociata Google che offre i servizi&comma; tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti&period; Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti&colon;',
+                    'sub-list' => [
                         "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo &lpar;paesi dell'Unione europea&comma; oltre a Islanda&comma; Liechtenstein e Norvegia&rpar; o in Svizzera&period;",
                         'Google LLC, con sede negli Stati Uniti&comma; per il resto del mondo&period;'
                     ],
                 ],
                 #1
                 [
-                    'La versione dei termini che regola il nostro rapporto&comma; che può variare in base alle leggi locali&period;'
+                    'title' => 'La versione dei termini che regola il nostro rapporto&comma; che può variare in base alle leggi locali&period;'
                 ],
             ],
             "Puoi leggere ulteriori informazioni sulla sicurezza online&comma; incluso come proteggere te e la tua famiglia online&comma; nel Centro Google per la sicurezza online&period;",
@@ -105,6 +105,7 @@ $db = [
                         <!-- DOMANDA -->
                         <h2><?=$value?></h2>
                     <?php
+                    // $value, con $ansque === answer rappresente tutte le risposte necessarie alla stampa
                     } elseif($ansQue === 'answer') {
                         foreach($value as $parList) {
                             if(is_string($parList)) {
@@ -112,10 +113,27 @@ $db = [
                                 <p><?=$parList;?></p>
                     <?php
                             } elseif(is_array($parList)) {
-                                var_dump($parList);
+                                // var_dump($parList);
+                    ?>
+                                <ol class="list-num-index">
+                                    <?php
+                                    foreach ($parList as $titleList => $item) {
+                                    ?>
+                                        <li>
+                                            <h3><?=$item['title']?></h3>
+                                            <ol class="list-str-index">
+                                                <li>
+                                                    test sub-menu
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    <?php
+                                    }
+                                    ?>
+                                </ol>
+                    <?php
                             }
                         }
-                        // $value, con $ansque === answer rappresente tutte le risposte necessarie alla stampa
                     ?>
                         <!-- RISPOSTA/RISPOSTE -->
                         
