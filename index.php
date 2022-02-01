@@ -50,7 +50,15 @@ $db = [
                 ],
             ],
             "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account&period;"
-        ]
+        ],
+        'subContainer' => [
+            'title' => 'Stabilire il paese associato al tuo account',
+            'paragraphs' => [
+                "Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.",
+                "I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.",
+                "Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato."
+            ],
+        ],
     ],
     //QUESTION #4
     [
@@ -90,16 +98,6 @@ $db = [
      * 
      * 
      * inserire in database sub-paragraph e stampare in html
-     * ==========================================
-     subtitle: Stabilire il paese associato al tuo account
-     
-     subparagraphs
-     Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.
-     
-     I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.
-     
-     Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato.
-     * ==========================================
      */
     ?>
     <!-- HEADER -->
@@ -111,6 +109,7 @@ $db = [
             <!-- devo scorrere tutto il database e per ogni domanda stampare la/le risposta/e -->
             <?php 
             foreach ($db as $faq) {
+                echo '<section>';
                 //chiavi di db -> integer 0 -> max
                 foreach ($faq as $ansQue => $value) {
                     //chiave di faq=$ansQue -> question/answer
@@ -124,6 +123,7 @@ $db = [
                         foreach($value as $parList) {
                             if(is_string($parList)) {
                     ?>
+                                <!-- RISPOSTA/RISPOSTE -->
                                 <p><?=$parList;?></p>
                     <?php
                             } elseif(is_array($parList)) {
@@ -142,7 +142,7 @@ $db = [
                                                     <?php
                                                     foreach ($item['subList'] as $subParag) {
                                                     ?>
-                                                        <li><?=$subParag?></li>
+                                                        <li><p><?=$subParag?></p></li>
                                                     <?php
                                                     }
                                                     ?>
@@ -155,17 +155,23 @@ $db = [
                                     }
                                     ?>
                                 </ol>
-                    <?php
+            <?php
                             }
                         }
-                    ?>
-                        <!-- RISPOSTA/RISPOSTE -->
-                        
-                    <?php
+                    } elseif($ansQue === 'subContainer' && isset($ansQue)) {
+            ?>
+                        <h3><?=$value['title']?></h3>
+                        <?php
+                        foreach ($value['paragraphs'] as $par) {
+                        ?>
+                            <p><?=$par?></p>
+                        <?php
+                        }
                     }
                 }
+                echo '</section>';
             }
-                    ?>
+                        ?>
         </div>
     </main>
     <!-- MAIN -->
