@@ -74,15 +74,30 @@ $db = [
                 foreach ($faq as $ansQue => $value) {
                     //chiave di faq=$ansQue -> question/answer
                     if ($ansQue === 'question') {
-                    ?>
+            ?>
+                        <!-- DOMANDA -->
                         <h2><?=$value?></h2>
+                    <?php
+                    } elseif($ansQue === 'answer') {
+                        foreach($value as $parList) {
+                            // var_dump($parList);
+                            if(is_string($parList)) {
+                    ?>
+                                <p><?=$parList;?></p>
+                    <?php
+                            } elseif(is_array($parList)) {
+                                echo 'OK HAI UN ARRAY.';
+                            }
+                        }
+                        // $value, con $ansque === answer rappresente tutte le risposte necessarie alla stampa
+                    ?>
+                        <!-- RISPOSTA/RISPOSTE -->
+                        
                     <?php
                     }
                 }
             }
             ?>
-            <!-- DOMANDA -->
-            <!-- RISPOSTA/RISPOSTE -->
         </div>
     </main>
     <!-- MAIN -->
